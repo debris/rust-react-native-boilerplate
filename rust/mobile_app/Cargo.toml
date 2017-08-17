@@ -8,3 +8,8 @@ name = "mobile_app"
 crate-type = ["staticlib", "cdylib"]
 
 [dependencies]
+libc = "0.2"
+jni = { version = "0.5.1", optional = true, default-features = false }
+
+[features]
+default = ["jni"]

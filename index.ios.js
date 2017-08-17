@@ -11,20 +11,33 @@ import {
   Text,
   View
 } from 'react-native';
+import { MobileAppBridge } from 'NativeModules';
+
+async function displayHelloWorld (self) {
+  try {
+    let text = await MobileAppBridge.sayHelloWorld("iOS")
+    self.setState({
+      hello: text
+    })
+  } catch (e) {
+      console.log(e)
+  }
+}
 
 export default class mobile_app extends Component {
+
+  state = {}
+
+  componentDidMount () {
+    displayHelloWorld(this)
+  }
+
   render() {
+    displayHelloWorld(this)
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          rust says: {this.state.hello}
         </Text>
       </View>
     );
