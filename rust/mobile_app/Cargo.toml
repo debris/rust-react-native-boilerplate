@@ -1,0 +1,10 @@
+[package]
+name = "mobile_app"
+version = "0.1.0"
+authors = ["debris <marek.kotewicz@gmail.com>"]
+
+[lib]
+name = "mobile_app"
+crate-type = ["staticlib", "cdylib"]
+
+[dependencies]
