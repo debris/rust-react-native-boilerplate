@@ -33,7 +33,6 @@ export default class mobile_app extends Component {
   }
 
   render() {
-    displayHelloWorld(this)
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

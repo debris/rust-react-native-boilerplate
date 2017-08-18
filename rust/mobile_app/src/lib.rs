@@ -38,7 +38,9 @@ pub mod android {
   use self::jni::sys::jstring;
 
   #[no_mangle]
-  pub unsafe extern fn Java_com_mobile_1app_MobileAppBridge_helloWorld(env: JNIEnv, _: JClass, name: JString) -> jstring {
+  pub unsafe extern fn Java_com_mobile_1app_MobileAppBridge_helloWorld(
+    env: JNIEnv, _: JClass, name: JString
+  ) -> jstring {
     let name: String = env.get_string(name).unwrap().into();
     let response = format!("Hello {}!", name);
     env.new_string(response).unwrap().into_inner()

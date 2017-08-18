@@ -28,5 +28,5 @@ public class MobileAppBridge extends ReactContextBaseJavaModule {
         promise.resolve(helloWorld(name));
     }
 
-    private static native String helloWorld(String seed);
+    private static native String helloWorld(String name);
 }
